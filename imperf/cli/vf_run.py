@@ -1,6 +1,8 @@
 import argparse
 import json
+import shlex
 from pathlib import Path
+
 import yaml
 import pandas as pd
 import numpy as np
@@ -34,11 +36,12 @@ def main():
     seq = yaml.safe_load(open(args.sequence_cfg))
 
     root = Path(args.images).expanduser().resolve()
-    pats = ext['ingest']['glob'].split()
-    if len(pats)==1 and '**' in pats[0]:
-        # allow brace expansion style in one string
-        pats = pats[0].split(',') if ',' in pats[0] else [pats[0]]
-    files = discover_images(root, patterns=[p.strip() for p in pats])
+    glob_cfg = ext['ingest']['glob']
+    if isinstance(glob_cfg, str):
+        pats = shlex.split(glob_cfg)
+    else:
+        pats = list(glob_cfg)
+    files = discover_images(root, patterns=pats)
     if not files:
         raise SystemExit('No images found. Check your path/glob.')
     print(f"Found {len(files)} images")
