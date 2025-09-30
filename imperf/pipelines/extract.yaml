@@ -1,0 +1,15 @@
+ingest:
+  glob: "**/*.{jpg,jpeg,png,JPG,JPEG,PNG}"
+normalize:
+  long_edge: 512
+  letterbox: true
+features:
+  - name: hue_stats
+  - name: sharpness_laplacian
+  - name: edge_orientation_hist
+  - name: saliency_ratio
+  - name: clip_embedding
+store:
+  parquet_path: "imperf/db/features.parquet"
+  image_table_path: "imperf/db/images.parquet"
+  index_path: "imperf/db/clip.faiss"

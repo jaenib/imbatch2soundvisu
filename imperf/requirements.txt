@@ -1,0 +1,14 @@
+pillow
+opencv-python
+numpy
+pandas
+pyarrow
+scikit-image
+tqdm
+pyyaml
+faiss-cpu
+imageio
+imageio-ffmpeg
+# CLIP stack (you can pin to your CUDA version or use cpu)
+open-clip-torch
+torch

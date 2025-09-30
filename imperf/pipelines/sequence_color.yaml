@@ -1,0 +1,25 @@
+select:
+  filter: "has_clip == True"
+order:
+  mode: "composed"
+  traits:
+    - key: hue_mean
+      weight: 1.0
+      circular: true
+    - key: saliency_ratio
+      weight: 0.3
+    - key: clip_pc1
+      weight: 0.2
+smoothing:
+  window: 3
+  method: "swap_local_min"
+render:
+  take_every_n: 1         # keep 1 to use all; raise if you want fewer frames
+  contact_sheet:
+    cols: 10
+    thumb: 256
+    path: "imperf/out/contact_sheet.jpg"
+  video:
+    fps: 24
+    xfade_frames: 5       # ~150ms at 30fps; with fps=24 this is ~208ms
+    path: "imperf/out/sequence.mp4"

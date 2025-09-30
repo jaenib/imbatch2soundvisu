@@ -1,0 +1,6 @@
+/.DS_Store
+/.venv
+/collections
+/run_lines.txt
+/whi.txt
+*.venv
