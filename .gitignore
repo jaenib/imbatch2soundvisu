@@ -1,6 +1,19 @@
-/.DS_Store
-/.venv
+# macOS artifacts
+.DS_Store
+**/.DS_Store
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+*.venv
+
+# Project-specific temporary files
 /collections
 /run_lines.txt
 /whi.txt
-*.venv
