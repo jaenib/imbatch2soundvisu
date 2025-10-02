@@ -10,11 +10,12 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from secrets import user_path
 
 #: Directory that contains the image material you want to experiment with.
 #: Update this value right after cloning the repository so everything else in
 #: the toolkit can discover your files.
-DATA_ROOT: Path = Path("/path/to/your/image/dataset")
+DATA_ROOT: Path = Path(user_path).expanduser().resolve()
 
 #: Optional environment variable that overrides :data:`DATA_ROOT` when set.
 ENV_VAR_NAME = "IMBATCH2SOUNDVISU_DATA_ROOT"
