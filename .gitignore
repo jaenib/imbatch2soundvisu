@@ -1,6 +1,27 @@
-/.DS_Store
-/.venv
-/collections
-/run_lines.txt
-/whi.txt
-*.venv
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# macOS metadata
+.DS_Store
+
+# Local configuration
+run_lines.txt
+whi.txt
+collections/
+outputs/
