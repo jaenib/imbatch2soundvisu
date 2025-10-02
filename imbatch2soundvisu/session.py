@@ -24,10 +24,8 @@ FRAME_DURATION_MS = 220
 TARGET_SIZE = (720, 720)
 MAX_FRAMES = 240
 
-
 def create_config(dataset_root: Path | None = None) -> SessionConfig:
     root = dataset_root or get_data_root()
-
     def on_feature_summary(summary: dict[str, FeatureStats]) -> None:
         if not summary:
             print("No features could be summarized. Check your dataset configuration.")

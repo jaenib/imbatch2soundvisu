@@ -40,7 +40,6 @@ class SessionConfig:
     on_feature_summary: FeatureSummaryHook | None = None
     render: RenderOptions | None = None
 
-
 def run_session(config: SessionConfig) -> list[list[ImageRecord]]:
     """Execute ``config`` and return the generated sequences."""
 

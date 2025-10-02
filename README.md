@@ -110,6 +110,7 @@ without wrestling with command-line plumbing.
 
 * Emit contact sheets or storyboards alongside the GIFs for frame-accurate
   planning.
+* Capture thumbnails for quick visual inspection alongside the printed values.
 * Cache feature computations to keep large experiments responsive.
 * Add opt-in hooks for CLIP embeddings, segmentation masks, or motion-aware
   sequencing once you start feeding in camera rolls and video frame dumps.
