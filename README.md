@@ -28,8 +28,10 @@ surprising coherence.
    python -m imbatch2soundvisu
    ```
 
-   The script prints the generated sequences along with the feature values that
-   produced them.
+   The script prints a feature overview, logs each generated sequence together
+   with the driving metric, and renders animated GIFs into
+   [`outputs/`](outputs) so you can immediately watch every ordering come to
+   life.
 
 ## How can we sort one-subject image sets?
 
@@ -92,9 +94,10 @@ imbatch2soundvisu/
 ├── config.py        # Set DATA_ROOT and tweak supported extensions here.
 ├── datasets.py      # Discovers image files and creates lightweight records.
 ├── features.py      # Scalar descriptors (luminance, hue, subject scale, …).
-├── pipeline.py      # Orchestrates feature extraction and sequencing.
-├── session.py       # Your sandbox: describe sequences and print results.
+├── pipeline.py      # Orchestrates feature extraction, sequencing, and rendering.
+├── session.py       # Your sandbox: describe sequences, stats, and logging.
 ├── sorting.py       # Helpers for ordering and formatting sequences.
+├── visuals.py       # Compiles ordered frames into animated GIFs.
 └── __main__.py      # Allows `python -m imbatch2soundvisu` to run the session.
 ```
 
@@ -105,6 +108,8 @@ without wrestling with command-line plumbing.
 
 ## Next steps
 
+* Emit contact sheets or storyboards alongside the GIFs for frame-accurate
+  planning.
 * Capture thumbnails for quick visual inspection alongside the printed values.
 * Cache feature computations to keep large experiments responsive.
 * Add opt-in hooks for CLIP embeddings, segmentation masks, or motion-aware

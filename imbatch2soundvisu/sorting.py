@@ -15,6 +15,8 @@ class SequencePlan:
     title: str
     feature: str
     reverse: bool = False
+    render: bool = True
+    output_name: str | None = None
 
 
 def sort_by_feature(

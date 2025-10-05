@@ -24,6 +24,7 @@ dist/
 run_lines.txt
 whi.txt
 collections/
+outputs/
 
 Basic_Acid.mp3
 imbatch2soundvisu/user_secrets.py
